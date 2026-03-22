@@ -33,15 +33,9 @@ const MatrixRain = () => {
         const x = i * fontSize;
         const y = drops[i] * fontSize;
 
-        // Mix of green and occasional red
-        if (Math.random() > 0.97) {
-          ctx.fillStyle = "hsl(355, 70%, 56%)";
-          ctx.shadowColor = "hsl(355, 70%, 56%)";
-        } else {
-          const brightness = 35 + Math.random() * 30;
-          ctx.fillStyle = `hsl(120, 60%, ${brightness}%)`;
-          ctx.shadowColor = "hsl(120, 60%, 45%)";
-        }
+        const brightness = 35 + Math.random() * 30;
+        ctx.fillStyle = `hsl(355, 70%, ${brightness}%)`;
+        ctx.shadowColor = "hsl(355, 70%, 56%)";
         ctx.shadowBlur = 4;
         ctx.fillText(char, x, y);
         ctx.shadowBlur = 0;

@@ -100,7 +100,7 @@
 
 .matrix-char {
   animation: matrix-fall linear infinite;
-  color: hsl(120 60% 45%);
+  color: hsl(355 70% 56%);
   font-family: var(--font-mono);
   opacity: 0.7;
   text-shadow: 0 0 8px hsl(120 60% 45% / 0.8);

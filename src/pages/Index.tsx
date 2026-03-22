@@ -1,4 +1,4 @@
-import { Shield, Bug, Brain, Crosshair, Terminal, Lock } from "lucide-react";
+import { Shield, Bug, Brain, Crosshair, Terminal, Lock, ImageIcon } from "lucide-react";
 import logo from "@/assets/logo.png";
 import MatrixRain from "@/components/MatrixRain";
 
@@ -35,15 +35,20 @@ const services = [
   },
 ];
 
+const pocItems = [
+  { title: "LLM Jailbreak Demo", placeholder: true },
+  { title: "Prompt Injection PoC", placeholder: true },
+  { title: "Data Exfiltration Test", placeholder: true },
+  { title: "Guardrail Bypass", placeholder: true },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <MatrixRain />
       
-      {/* Scan line effect */}
       <div className="scan-line" />
 
-      {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -54,17 +59,15 @@ const Index = () => {
           </div>
           <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
             <a href="#services" className="hover:text-primary transition-colors">services</a>
+            <a href="#poc" className="hover:text-primary transition-colors">proof of concept</a>
             <a href="#about" className="hover:text-primary transition-colors">about</a>
             <a href="#contact" className="hover:text-primary transition-colors">contact</a>
           </div>
         </div>
       </nav>
 
-      {/* Hero */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-4xl mx-auto">
-          <img src={logo} alt="Mind Hijack Logo" className="w-40 h-40 md:w-56 md:h-56 mx-auto mb-8 drop-shadow-2xl" />
-          
           <h1 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl tracking-tight mb-6 text-foreground">
             MIND <span className="text-primary text-glow-red">HIJACK</span>
           </h1>
@@ -77,7 +80,7 @@ const Index = () => {
             <p className="font-display text-xl md:text-2xl lg:text-3xl text-foreground italic">
               "Because every AI has a <span className="text-primary text-glow-red">forbidden fruit</span>"
             </p>
-            <p className="font-mono text-sm md:text-base text-matrix text-glow-green tracking-widest uppercase">
+            <p className="font-mono text-sm md:text-base text-primary text-glow-red tracking-widest uppercase">
               The Serpent's Audit for LLMs
             </p>
           </div>
@@ -91,11 +94,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services */}
       <section id="services" className="relative z-10 py-24 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <p className="font-mono text-sm text-matrix text-glow-green tracking-widest mb-2">// SERVICES</p>
+            <p className="font-mono text-sm text-primary text-glow-red tracking-widest mb-2">SERVICES</p>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground">
               What We <span className="text-primary">Exploit</span>
             </h2>
@@ -116,10 +118,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About */}
+      <section id="poc" className="relative z-10 py-24 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <p className="font-mono text-sm text-primary text-glow-red tracking-widest mb-2">PROOF OF CONCEPT</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground">
+              Our <span className="text-primary">Work</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {pocItems.map((item) => (
+              <div
+                key={item.title}
+                className="circuit-border rounded-lg overflow-hidden bg-card/60 backdrop-blur-sm group hover:bg-card transition-all"
+              >
+                <div className="aspect-video flex items-center justify-center bg-secondary/30">
+                  <ImageIcon className="w-12 h-12 text-muted-foreground/40" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display font-bold text-foreground">{item.title}</h3>
+                  <p className="font-mono text-xs text-muted-foreground mt-1">Replace with your PoC image</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="relative z-10 py-24 px-6">
         <div className="container mx-auto max-w-3xl text-center">
-          <p className="font-mono text-sm text-matrix text-glow-green tracking-widest mb-2">// ABOUT</p>
+          <p className="font-mono text-sm text-primary text-glow-red tracking-widest mb-2">ABOUT</p>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-8">
             Why <span className="text-primary">Mind Hijack</span>?
           </h2>
@@ -131,10 +160,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA / Contact */}
       <section id="contact" className="relative z-10 py-24 px-6">
         <div className="container mx-auto max-w-2xl text-center">
-          <p className="font-mono text-sm text-matrix text-glow-green tracking-widest mb-2">// INITIATE</p>
+          <p className="font-mono text-sm text-primary text-glow-red tracking-widest mb-2">INITIATE</p>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
             Ready to Test Your <span className="text-primary">Defenses</span>?
           </h2>
@@ -151,7 +179,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="relative z-10 border-t border-border py-8 px-6">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
