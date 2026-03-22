@@ -1,4 +1,5 @@
-import { Shield, Bug, Brain, Crosshair, Terminal, Lock, ImageIcon } from "lucide-react";
+import { useState } from "react";
+import { Shield, Bug, Brain, Crosshair, Terminal, Lock, ImageIcon, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import MatrixRain from "@/components/MatrixRain";
 
@@ -42,7 +43,15 @@ const pocItems = [
   { title: "Guardrail Bypass", placeholder: true },
 ];
 
+const navLinks = [
+  { href: "#services", label: "services" },
+  { href: "#poc", label: "proof of concept" },
+  { href: "#about", label: "about" },
+];
+
 const Index = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <MatrixRain />
@@ -61,12 +70,24 @@ const Index = () => {
             </div>
           </a>
           <div className="hidden md:flex items-center gap-8 font-mono text-xs text-muted-foreground uppercase tracking-wider">
-            <a href="#services" className="hover:text-primary transition-colors py-1 border-b border-transparent hover:border-primary">services</a>
-            <a href="#poc" className="hover:text-primary transition-colors py-1 border-b border-transparent hover:border-primary">proof of concept</a>
-            <a href="#about" className="hover:text-primary transition-colors py-1 border-b border-transparent hover:border-primary">about</a>
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-primary transition-colors py-1 border-b border-transparent hover:border-primary">{l.label}</a>
+            ))}
             <a href="#contact" className="px-4 py-2 bg-primary text-primary-foreground rounded text-xs tracking-wider hover:brightness-110 transition-all">contact</a>
           </div>
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-foreground p-1" aria-label="Toggle menu">
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {menuOpen && (
+          <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-primary/10 px-6 py-4 space-y-3 font-mono text-sm uppercase tracking-wider">
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="block text-muted-foreground hover:text-primary transition-colors py-2">{l.label}</a>
+            ))}
+            <a href="#contact" onClick={() => setMenuOpen(false)} className="block text-center mt-2 px-4 py-2 bg-primary text-primary-foreground rounded text-xs tracking-wider">contact</a>
+          </div>
+        )}
       </nav>
 
       <section className="relative z-10 min-h-screen flex items-center justify-center px-6">
