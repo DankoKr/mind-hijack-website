@@ -182,17 +182,11 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="relative z-10 border-t border-border py-8 px-6">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="Mind Hijack" className="h-6 w-6" />
-            <span className="font-display text-sm text-muted-foreground">
-              © 2026 Mind Hijack. All rights reserved.
-            </span>
-          </div>
-          <p className="font-mono text-xs text-muted-foreground">
-            AI Red Teaming & Pentesting
-          </p>
+      <footer className="relative z-10 border-t border-border py-6 px-6">
+        <div className="container mx-auto text-center">
+          <span className="font-mono text-xs text-muted-foreground">
+            © 2026 Mind Hijack. All rights reserved.
+          </span>
         </div>
       </footer>
     </div>
