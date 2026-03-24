@@ -93,37 +93,12 @@
   50% { opacity: 1; }
 }
 
-@keyframes scan-line {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
 .matrix-char {
   animation: matrix-fall linear infinite;
   color: hsl(355 70% 56%);
   font-family: var(--font-mono);
   opacity: 0.7;
-  text-shadow: 0 0 8px hsl(120 60% 45% / 0.8);
-}
-
-.glow-red {
-  box-shadow: var(--glow-primary);
-}
-
-.text-glow-red {
-  text-shadow: 0 0 20px hsl(355 70% 56% / 0.5), 0 0 40px hsl(355 70% 56% / 0.2);
-}
-
-.text-glow-green {
-  text-shadow: 0 0 10px hsl(120 60% 45% / 0.6);
-}
-
-.scan-line {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, hsl(120 60% 45% / 0.15), transparent);
-  animation: scan-line 4s linear infinite;
+  text-shadow: 0 0 8px hsl(355 70% 56% / 0.8);
 }
 
 .circuit-border {
