@@ -6,11 +6,10 @@ import {
   Crosshair,
   Terminal,
   Lock,
-  ImageIcon,
   Menu,
   X,
 } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-transparent.png";
 import MatrixRain from "@/components/MatrixRain";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -56,7 +55,7 @@ const Index = () => {
             <img
               src={logo}
               alt="Mind Hijack"
-              className="h-8 w-8 sm:h-9 sm:w-9 transition-transform group-hover:scale-110"
+              className="h-10 w-10 sm:h-12 sm:w-12"
             />
             <div className="flex flex-col leading-none">
               <span className="font-display font-bold text-sm sm:text-base tracking-widest text-foreground">
