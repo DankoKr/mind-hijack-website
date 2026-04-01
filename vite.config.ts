@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/mind-hijack/",
+  base: "/mind-hijack-website/",
   server: {
     host: "::",
     port: 8080,
